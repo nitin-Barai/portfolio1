@@ -1,0 +1,459 @@
+#menu{
+    font-size:15px;
+    cursor:pointer;
+    
+    font-family: "Times New Roman", Times, serif;
+    
+}
+
+/* navigation bar */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    font-family: 'Bungee Shade', cursive;
+font-family: 'Fredericka the Great', cursive;
+
+    }
+
+.overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border:white;
+    }
+
+
+.overlay a {
+    /* padding: 20px; */
+    text-decoration: none;
+    
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+
+    
+    
+    }
+
+@media screen  and (min-height:601px){
+    .overlay a {
+        padding: 20px;
+        font-size: 34px;
+
+    }
+
+}
+@media screen  and (max-height:600px){
+    .overlay a {
+        padding: 20px;
+        font-size: 20px;
+
+    }
+
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #ffffff;
+    
+    }
+
+.overlay .closebtn {
+    position: absolute;
+    margin-top: -20px;
+    left: 10px;
+    font-size: 60px;
+    
+    }
+
+@media screen and (min-height: 600px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 5px;
+    right: 35px;
+    
+    }
+}
+
+
+@media screen and (min-height: 600px) {
+    
+        ul {
+            list-style-type: none;
+            font-family: Arial, Helvetica, sans-serif;
+            display: block;
+            font-size: 18;
+            background-color: rgb(209, 203, 203)!important;
+            margin-top: -10;
+            margin:0;
+            padding:0;
+            overflow: hidden;
+          }
+          
+          
+          li {
+            float: left;            
+          }
+          
+          li a {
+            display: block;
+            color: rgb(29, 28, 28);
+            text-align: center;
+            padding: 10px 10px;
+            text-decoration: none;
+            margin-right:20px ;
+            font-weight: 600;
+            
+
+          }
+          
+          li a:hover {
+            padding: 8px 8px;
+            border-bottom: 2px solid rgb(75, 72, 72);
+            color:rgb(71, 70, 70);
+            
+          
+    }
+
+    
+}
+
+@media screen and (max-height: 600px) {
+    ul{
+        display:none;
+    }
+    .today { display:block }
+
+}
+
+/* End: style(css) for menu list */
+
+/* start: style for menu button */
+
+@media screen and (max-height: 600px) {
+    .bar1, .bar2, .bar3 {
+        width: 30px;
+        height: 5px;
+        background-color: rgb(0, 0, 0);
+        margin: 3px -15;
+        
+        transition: 0.4s;
+    }
+}
+/* .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+} */
+
+/* .change .bar2 {opacity: 0;} */
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* content size change with screen size */
+@media screen and (min-width: 601px) {
+    .example {
+        font-size: 35px!important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .example {
+        font-size: 25px!important;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .font {
+        font-size: 22!important;
+        margin:20;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .font {
+        font-size: 16!important;
+        margin:20;
+
+    }
+}
+/* allfont */
+
+
+@media screen and (min-width: 601px) {
+    .allfont {
+        font-size: 28!important
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .allfont {
+        font-size: 16!important
+    }
+}
+
+/* Profile picture image size */
+#imgsize {    
+    border-radius: 20%;
+    position: sticky;
+    top: 0 ;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);      
+    
+}
+
+@media screen and (min-width: 601px) {
+    #imgsize {
+        height:620px!important;
+        padding :5;
+        float:right;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #imgsize {
+        height:300px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding :2;
+
+    }
+}
+
+/* name_home_page */
+
+#name{
+    border-bottom:solid; 
+    padding:2;
+    letter-spacing:5px;
+    color:rgb(49, 66, 20);
+    
+}
+@media screen and (min-width: 601px) {
+    #name {
+        font-size: 45!important;
+        
+        
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #name {
+        font-size: 30!important;       
+    }
+}
+
+/* GIS Developer size based on screen */
+
+#name1 {
+    
+    color:rgb(52, 75, 13)
+    
+}
+@media screen and (min-width: 601px) {
+    #name1 {
+        font-size: 30!important;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    #name1 {
+        font-size: 22!important;
+    }
+}
+
+
+/* home page small description */
+#homeDes{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(41, 40, 40);
+}
+@media screen and (min-width: 601px) {
+    #homeDes {
+        font-size: 25!important;
+        
+        
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #homeDes {
+        font-size: 16!important
+    }
+}
+
+/*company logo  */
+#company {
+    height:20%;
+    border-style: solid;
+    
+    margin:20    
+}
+
+/* project image */
+@media screen and (min-width: 601px) {
+    
+    
+    /* skill icon logo */
+    #logo{
+        height:15%;
+    }
+    /* company logo */
+    #company {
+        float: right;
+        height: 20%;
+        
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+   
+    /* skill icon logo */
+    #logo{
+        height:10%;
+    }
+    #company {
+        
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 15%;
+        
+    }
+}
+
+/* skill icon logo */
+#logo{
+    border-style: solid;
+    margin:10;
+    
+}
+#exp{
+    text-align: center;
+    font-size: 40;
+    font-family:Verdana, Geneva, Tahoma, sans-serif!important;
+    background-color: rgb(90, 149, 153);
+    /* color: rgb(233, 215, 215); */
+    padding: 10;
+    
+                
+}
+
+#project{
+    width:80%;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5;
+    
+    
+}
+#project_descrition{
+    text-align: center;
+    text-decoration:none;
+    font-weight: 900;
+    color: black;
+    background-color: rgb(126, 126, 54);
+    color: rgb(233, 231, 231);
+    /* background-color: rgb(190, 190, 34); */
+}
+.company_head{
+    /* background-color: #65686d;  */
+    background-color: rgb(126, 126, 54);
+    color: rgb(233, 231, 231); 
+    padding:1
+    
+
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (min-width: 601px) {
+    .work {
+        margin:30;
+        margin-left:60
+     
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .work {
+      
+       margin:10;
+       margin-bottom:30;
+        margin-left:10
+    }
+  }
+  .workcontent {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(224, 222, 219);
+    display: block;
+    padding :20;
+    
+  }
+
+/* menu active */
+  .active {
+    background-color: rgb(110, 169, 173);
+    color: black;
+  }
+  /* exp Image */
+  
+
+  #expimg{
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+      padding:2;
+      margin-bottom: 10;
+  }
+
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (min-height: 601px) {
+    
+      
+        #expimg{
+            width:100%;
+            overflow: hidden;
+            
+          }
+    
+  }
+  @media screen and (max-height: 600px) {
+    
+      
+    #expimg{
+        width:100%;
+        /* display: inline-block; */
+    
+
+      }
+
+}
+
+.fab{
+    color:black;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    
+}

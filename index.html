@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <title >Nitin : Portfolio</title>
+        <link rel=icon href=imgfeather.png sizes="100x100" type="image/png">
+        <link rel="stylesheet" href="css/bootstrap.css" >
+        <link rel="stylesheet" href="css/menu_bar.css" >
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+        <link rel="stylesheet" href="css/normalize.css" type="test/css">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/materialdesignicons.min.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css"type="text/css">
+        <style>
+            /* Start : animation and style(css) for image */
+            img:hover {
+              animation: shake 0.5s;
+              animation-iteration-count: infinite;
+            }
+           
+            @keyframes shake {
+              0% { transform: translate(1px, 1px) rotate(0deg); }
+              10% { transform: translate(-1px, -2px) rotate(-1deg); }
+              20% { transform: translate(-3px, 0px) rotate(1deg); }
+              30% { transform: translate(3px, 2px) rotate(0deg); }
+              40% { transform: translate(1px, -1px) rotate(1deg); }
+              50% { transform: translate(-1px, 2px) rotate(-1deg); }
+              60% { transform: translate(-3px, 1px) rotate(0deg); }
+              70% { transform: translate(3px, 1px) rotate(-1deg); }
+              80% { transform: translate(-1px, -1px) rotate(1deg); }
+              90% { transform: translate(1px, 2px) rotate(0deg); }
+              100% { transform: translate(1px, -2px) rotate(-1deg); }
+            }
+             /* End : animation and style(css) for image */
+            
+            
+
+            /* bg color diagonal */
+            #bg_diagonal{
+                background: linear-gradient(40deg,  rgb(209, 203, 203) 40%, transparent 60% )
+            }
+            
+        
+            #title_border{
+                 
+                border-bottom:solid; 
+                padding:10
+            }
+            h1{
+                padding: 10;
+                font-size: 60;
+                letter-spacing: 10px;
+            }
+            h2{
+                font-size: 60;
+                letter-spacing: 10px;
+            }
+            
+            
+        </style>
+    </head>
+    <body style="background-color:rgb(90, 149, 153); overflow-x: hidden; width: 100%" id="bg_diagonal">
+         <p id="BigNavbar" >
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="experience_skills_projects.html">Experience, Skills & Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </p>
+
+        
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                
+                <a href="index.html">Home</a>
+                <a href="about.html">About me</a>
+                <a href="experience_skills_projects.html">Experience, Skills & Projects</a>
+                <a href="contact.html">Contact</a>
+                </ul>
+            </div>
+        </div>
+        <!-- Menu Bar -->
+        <script>
+            function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+            }
+            
+            function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+            }
+        </script>
+          <!-- Use any element to open/show the overlay navigation menu -->
+        <span onclick="openNav()">
+            
+            <!-- Click on the Menu Icon to transform it to "X" -->
+            <div class="container" onclick="Open(this);" style="margin-right: 100%;">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            </div>
+            
+        </span>
+        <div class='row' style="font-family:'Merienda', cursive!important;text-align: center;color: black">
+
+            <!-- Adding shaking image -->
+            <div class="col-md-5 col-sm-5">
+                <img id="imgsize" src="img/NITIN.jpg" alt="img" height=550px id="project" style ="margin-top:10;border-radius: 30%" >
+            </div>
+
+            <!--  home page text -->
+            <div class="col-md-6 col-sm-12" style="margin-top: 60px!important;" >
+                <p><strong  id="name" style="border-left:solid;font-weight:1000!important;">Nitin Barai</Strong></p>
+                <p><strong  id="name" style="border-right:solid;">Portfolio</strong></p>
+                <p id="name1"><br>*GIS Developer (self made)*</p>
+                <p id="homeDes" style="margin-top: 40px;">
+                    
+                    <strong>Dear Folks! </strong><br><br>
+                    Its my pleasure to have you on my Portfolio Website <br><br>
+                    Please click on <strong>Menu Options</strong> to know more about me  
+                </p>
+                <!-- social Media contacts -->
+                <div style="text-align: center;"  >
+                    <br>
+                    <strong>Have a Lovely Day! (:D</strong> <br>
+                    <a href="https://www.linkedin.com/in/sohini-sen-44a143185/" class="fab fa-linkedin"></a>
+                    <a href="skype:live:.cid.83994f115daf14b6?chat, https://join.skype.com/invite/UIUUptU30eri" class="fab fa-skype"></a>
+                    <a href="https://github.com/nitin-barai" class="fab fa-github"></a><br><br>
+                
+                </div>
+                <!--Extra Section for Get in Touch.... animation-->
+                <section class="home" id="home">
+                    <div class="titles">
+                      <div class="titles-wrap">
+                         <!--<h1>I'm <span>Nitin Barai </span></h1> -->
+                         <h2><span class="txt-rotate"></span></h2>
+                         <!--<p> Hi i am Developer , wellcome  </p>-->
+                         <div class="getintouch">
+                             <div><a href="contact.html" class="btn">Get In Touch </a></div>
+                         </div>
+                      </div>
+                  </div>
+              </section>
+          
+
+                
+
+            </div> 
+        </div>
+        
+    </body>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/script.js"></script>
+</html>
+
