@@ -1,330 +1,1120 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:x="urn:schemas-microsoft-com:office:excel"
-xmlns="http://www.w3.org/TR/REC-html40">
 
-<head>
-<meta name="Excel Workbook Frameset">
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=ProgId content=Excel.Sheet>
-<meta name=Generator content="Microsoft Excel 15">
-<link rel=File-List href="My%20Training%20Courses_files/filelist.xml">
-<![if !supportTabStrip]>
-<link id="shLink" href="My%20Training%20Courses_files/sheet001.htm">
-<link id="shLink" href="My%20Training%20Courses_files/sheet002.htm">
-
-<link id="shLink">
-
-<script language="JavaScript">
-<!--
- var c_lTabs=2;
-
- var c_rgszSh=new Array(c_lTabs);
- c_rgszSh[0] = "Sheet1";
- c_rgszSh[1] = "Sheet2";
-
-
-
- var c_rgszClr=new Array(8);
- c_rgszClr[0]="window";
- c_rgszClr[1]="buttonface";
- c_rgszClr[2]="windowframe";
- c_rgszClr[3]="windowtext";
- c_rgszClr[4]="threedlightshadow";
- c_rgszClr[5]="threedhighlight";
- c_rgszClr[6]="threeddarkshadow";
- c_rgszClr[7]="threedshadow";
-
- var g_iShCur;
- var g_rglTabX=new Array(c_lTabs);
-
-function fnGetIEVer()
-{
- var ua=window.navigator.userAgent
- var msie=ua.indexOf("MSIE")
- if (msie>0 && window.navigator.platform=="Win32")
-  return parseInt(ua.substring(msie+5,ua.indexOf(".", msie)));
- else
-  return 0;
-}
-
-function fnBuildFrameset()
-{
- var szHTML="<frameset rows=\"*,18\" border=0 width=0 frameborder=no framespacing=0>"+
-  "<frame src=\""+document.all.item("shLink")[0].href+"\" name=\"frSheet\" noresize>"+
-  "<frameset cols=\"54,*\" border=0 width=0 frameborder=no framespacing=0>"+
-  "<frame src=\"\" name=\"frScroll\" marginwidth=0 marginheight=0 scrolling=no>"+
-  "<frame src=\"\" name=\"frTabs\" marginwidth=0 marginheight=0 scrolling=no>"+
-  "</frameset></frameset><plaintext>";
-
- with (document) {
-  open("text/html","replace");
-  write(szHTML);
-  close();
- }
-
- fnBuildTabStrip();
-}
-
-function fnBuildTabStrip()
-{
- var szHTML=
-  "<html><head><style>.clScroll {font:8pt Courier New;color:"+c_rgszClr[6]+";cursor:default;line-height:10pt;}"+
-  ".clScroll2 {font:10pt Arial;color:"+c_rgszClr[6]+";cursor:default;line-height:11pt;}</style></head>"+
-  "<body onclick=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" onselectstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+" topmargin=0 leftmargin=0><table cellpadding=0 cellspacing=0 width=100%>"+
-  "<tr><td colspan=6 height=1 bgcolor="+c_rgszClr[2]+"></td></tr>"+
-  "<tr><td style=\"font:1pt\">&nbsp;<td>"+
-  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(0);\" onmouseout=\"parent.fnMouseOutScroll(0);\"><a>&#171;</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(0);\" ondblclick=\"parent.fnScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(1);\" onmouseout=\"parent.fnMouseOutScroll(1);\"><a>&lt</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(1);\" ondblclick=\"parent.fnScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(2);\" onmouseout=\"parent.fnMouseOutScroll(2);\"><a>&gt</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(3);\" onmouseout=\"parent.fnMouseOutScroll(3);\"><a>&#187;</a></td>"+
-  "<td style=\"font:1pt\">&nbsp;<td></tr></table></body></html>";
-
- with (frames['frScroll'].document) {
-  open("text/html","replace");
-  write(szHTML);
-  close();
- }
-
- szHTML =
-  "<html><head>"+
-  "<style>A:link,A:visited,A:active {text-decoration:none;"+"color:"+c_rgszClr[3]+";}"+
-  ".clTab {cursor:hand;background:"+c_rgszClr[1]+";font:9pt Arial;padding-left:3px;padding-right:3px;text-align:center;}"+
-  ".clBorder {background:"+c_rgszClr[2]+";font:1pt;}"+
-  "</style></head><body onload=\"parent.fnInit();\" onselectstart=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+
-  " topmargin=0 leftmargin=0><table id=tbTabs cellpadding=0 cellspacing=0>";
-
- var iCellCount=(c_lTabs+1)*2;
-
- var i;
- for (i=0;i<iCellCount;i+=2)
-  szHTML+="<col width=1><col>";
-
- var iRow;
- for (iRow=0;iRow<6;iRow++) {
-
-  szHTML+="<tr>";
-
-  if (iRow==5)
-   szHTML+="<td colspan="+iCellCount+"></td>";
-  else {
-   if (iRow==0) {
-    for(i=0;i<iCellCount;i++)
-     szHTML+="<td height=1 class=\"clBorder\"></td>";
-   } else if (iRow==1) {
-    for(i=0;i<c_lTabs;i++) {
-     szHTML+="<td height=1 nowrap class=\"clBorder\">&nbsp;</td>";
-     szHTML+=
-      "<td id=tdTab height=1 nowrap class=\"clTab\" onmouseover=\"parent.fnMouseOverTab("+i+");\" onmouseout=\"parent.fnMouseOutTab("+i+");\">"+
-      "<a href=\""+document.all.item("shLink")[i].href+"\" target=\"frSheet\" id=aTab>&nbsp;"+c_rgszSh[i]+"&nbsp;</a></td>";
-    }
-    szHTML+="<td id=tdTab height=1 nowrap class=\"clBorder\"><a id=aTab>&nbsp;</a></td><td width=100%></td>";
-   } else if (iRow==2) {
-    for (i=0;i<c_lTabs;i++)
-     szHTML+="<td height=1></td><td height=1 class=\"clBorder\"></td>";
-    szHTML+="<td height=1></td><td height=1></td>";
-   } else if (iRow==3) {
-    for (i=0;i<iCellCount;i++)
-     szHTML+="<td height=1></td>";
-   } else if (iRow==4) {
-    for (i=0;i<c_lTabs;i++)
-     szHTML+="<td height=1 width=1></td><td height=1></td>";
-    szHTML+="<td height=1 width=1></td><td></td>";
-   }
-  }
-  szHTML+="</tr>";
- }
-
- szHTML+="</table></body></html>";
- with (frames['frTabs'].document) {
-  open("text/html","replace");
-  charset=document.charset;
-  write(szHTML);
-  close();
- }
-}
-
-function fnInit()
-{
- g_rglTabX[0]=0;
- var i;
- for (i=1;i<=c_lTabs;i++)
-  with (frames['frTabs'].document.all.tbTabs.rows[1].cells[fnTabToCol(i-1)])
-   g_rglTabX[i]=offsetLeft+offsetWidth-6;
-}
-
-function fnTabToCol(iTab)
-{
- return 2*iTab+1;
-}
-
-function fnNextTab(fDir)
-{
- var iNextTab=-1;
- var i;
-
- with (frames['frTabs'].document.body) {
-  if (fDir==0) {
-   if (scrollLeft>0) {
-    for (i=0;i<c_lTabs&&g_rglTabX[i]<scrollLeft;i++);
-    if (i<c_lTabs)
-     iNextTab=i-1;
-   }
-  } else {
-   if (g_rglTabX[c_lTabs]+6>offsetWidth+scrollLeft) {
-    for (i=0;i<c_lTabs&&g_rglTabX[i]<=scrollLeft;i++);
-    if (i<c_lTabs)
-     iNextTab=i;
-   }
-  }
- }
- return iNextTab;
-}
-
-function fnScrollTabs(fDir)
-{
- var iNextTab=fnNextTab(fDir);
-
- if (iNextTab>=0) {
-  frames['frTabs'].scroll(g_rglTabX[iNextTab],0);
-  return true;
- } else
-  return false;
-}
-
-function fnFastScrollTabs(fDir)
-{
- if (c_lTabs>16)
-  frames['frTabs'].scroll(g_rglTabX[fDir?c_lTabs-1:0],0);
- else
-  if (fnScrollTabs(fDir)>0) window.setTimeout("fnFastScrollTabs("+fDir+");",5);
-}
-
-function fnSetTabProps(iTab,fActive)
-{
- var iCol=fnTabToCol(iTab);
- var i;
-
- if (iTab>=0) {
-  with (frames['frTabs'].document.all) {
-   with (tbTabs) {
-    for (i=0;i<=4;i++) {
-     with (rows[i]) {
-      if (i==0)
-       cells[iCol].style.background=c_rgszClr[fActive?0:2];
-      else if (i>0 && i<4) {
-       if (fActive) {
-        cells[iCol-1].style.background=c_rgszClr[2];
-        cells[iCol].style.background=c_rgszClr[0];
-        cells[iCol+1].style.background=c_rgszClr[2];
-       } else {
-        if (i==1) {
-         cells[iCol-1].style.background=c_rgszClr[2];
-         cells[iCol].style.background=c_rgszClr[1];
-         cells[iCol+1].style.background=c_rgszClr[2];
-        } else {
-         cells[iCol-1].style.background=c_rgszClr[4];
-         cells[iCol].style.background=c_rgszClr[(i==2)?2:4];
-         cells[iCol+1].style.background=c_rgszClr[4];
-        }
-       }
-      } else
-       cells[iCol].style.background=c_rgszClr[fActive?2:4];
-     }
-    }
-   }
-   with (aTab[iTab].style) {
-    cursor=(fActive?"default":"hand");
-    color=c_rgszClr[3];
-   }
-  }
- }
-}
-
-function fnMouseOverScroll(iCtl)
-{
- frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[7];
-}
-
-function fnMouseOutScroll(iCtl)
-{
- frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[6];
-}
-
-function fnMouseOverTab(iTab)
-{
- if (iTab!=g_iShCur) {
-  var iCol=fnTabToCol(iTab);
-  with (frames['frTabs'].document.all) {
-   tdTab[iTab].style.background=c_rgszClr[5];
-  }
- }
-}
-
-function fnMouseOutTab(iTab)
-{
- if (iTab>=0) {
-  var elFrom=frames['frTabs'].event.srcElement;
-  var elTo=frames['frTabs'].event.toElement;
-
-  if ((!elTo) ||
-   (elFrom.tagName==elTo.tagName) ||
-   (elTo.tagName=="A" && elTo.parentElement!=elFrom) ||
-   (elFrom.tagName=="A" && elFrom.parentElement!=elTo)) {
-
-   if (iTab!=g_iShCur) {
-    with (frames['frTabs'].document.all) {
-     tdTab[iTab].style.background=c_rgszClr[1];
-    }
-   }
-  }
- }
-}
-
-function fnSetActiveSheet(iSh)
-{
- if (iSh!=g_iShCur) {
-  fnSetTabProps(g_iShCur,false);
-  fnSetTabProps(iSh,true);
-  g_iShCur=iSh;
- }
-}
-
- window.g_iIEVer=fnGetIEVer();
- if (window.g_iIEVer>=4)
-  fnBuildFrameset();
-//-->
-</script>
-<![endif]><!--[if gte mso 9]><xml>
- <x:ExcelWorkbook>
-  <x:ExcelWorksheets>
-   <x:ExcelWorksheet>
-    <x:Name>Sheet1</x:Name>
-    <x:WorksheetSource HRef="My%20Training%20Courses_files/sheet001.htm"/>
-   </x:ExcelWorksheet>
-   <x:ExcelWorksheet>
-    <x:Name>Sheet2</x:Name>
-    <x:WorksheetSource HRef="My%20Training%20Courses_files/sheet002.htm"/>
-   </x:ExcelWorksheet>
-  </x:ExcelWorksheets>
-  <x:Stylesheet HRef="My%20Training%20Courses_files/stylesheet.css"/>
-  <x:WindowHeight>8010</x:WindowHeight>
-  <x:WindowWidth>14805</x:WindowWidth>
-  <x:WindowTopX>240</x:WindowTopX>
-  <x:WindowTopY>105</x:WindowTopY>
-  <x:ProtectStructure>False</x:ProtectStructure>
-  <x:ProtectWindows>False</x:ProtectWindows>
- </x:ExcelWorkbook>
-</xml><![endif]-->
-</head>
-
-<frameset rows="*,39" border=0 width=0 frameborder=no framespacing=0>
- <frame src="My%20Training%20Courses_files/sheet001.htm" name="frSheet">
- <frame src="My%20Training%20Courses_files/tabstrip.htm" name="frTabs" marginwidth=0 marginheight=0>
- <noframes>
-  <body>
-   <p>This page uses frames, but your browser doesn't support them.</p>
-  </body>
- </noframes>
-</frameset>
-</html>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Excel Data</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="mt-5">Excel Data</h1>
+            <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Unnamed: 0</th>
+      <th>Unnamed: 1</th>
+      <th>Unnamed: 2</th>
+      <th>Unnamed: 3</th>
+      <th>Unnamed: 4</th>
+      <th>Unnamed: 5</th>
+      <th>Unnamed: 6</th>
+      <th>Unnamed: 7</th>
+      <th>Unnamed: 8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SR. No.</td>
+      <td>Name of the training course</td>
+      <td>Duration</td>
+      <td>Instiitute</td>
+      <td>Certificate</td>
+      <td>NaN</td>
+      <td></td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Advance application of "R"  in planning and research</td>
+      <td>12 days FDP</td>
+      <td>Vishwa Bharati University West Bengal</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Application of soft computing techniques in research</td>
+      <td>5 days FDP</td>
+      <td>Govt College of engg Jalgaon</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Syposium Interdiciplinnery Approaches towords environments managements</td>
+      <td>1 day</td>
+      <td>NEERI nagpur</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Application of forensic Scienses , cyber Security and forensic accounting for prevention and   Investigation of crime</td>
+      <td>1 day</td>
+      <td>Gujrat forensic sci and KNM</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>ITiZEN  Ilearn 2012</td>
+      <td>6 month</td>
+      <td>iLearn Newdelhi</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>FDP  "QGIS"</td>
+      <td>5 days FDP</td>
+      <td>Pragati College of engg &amp; IIT bombay CIVIL</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Building web and mobile application with react.js and react native   (javascript es6 framewoork )</td>
+      <td>FDP 5 days</td>
+      <td>bacholor of computer application pc jubin sci colllge hubbli</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>FDP "Recent Techno and Trends in computer science and information technology"</td>
+      <td>2 days</td>
+      <td>oriental institute and science and technology 5 jule 2020</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>INTERNSHIP "Cyber Security and Cyber Forensic "</td>
+      <td>1 month</td>
+      <td>FOREnSEC Solutions Nagpur</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>The Location Advantage</td>
+      <td>6 weeks</td>
+      <td>esri</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Basics OF javascripts webAPPS</td>
+      <td>1 hr 15 min</td>
+      <td>esri</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>"Cartography "</td>
+      <td>6 weeks</td>
+      <td>esri</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Python for Everyone</td>
+      <td>3 hr 30 min</td>
+      <td>esri</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>"Spatial Data Science : The New Frontier in Analytics "</td>
+      <td>6 weeks</td>
+      <td>esri</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Autopsy (Cyber forensic tool)</td>
+      <td>8 hr</td>
+      <td>autopsy</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>IIRS Youtube -edusat "Geocomputation and Visualization in web platform /python /R(anaconda , jupitor ,notebook,mumpy,matplot lib, raster -gdal, )'</td>
+      <td>NaN</td>
+      <td>IIRS Youtube -edusat</td>
+      <td>youtube  jan 31 -2020</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>programming for geodata processing</td>
+      <td>NaN</td>
+      <td>IIRS Youtube -edusat</td>
+      <td>youtube</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>image processing skill (high resolution ), e-cognition , SAR , Microwave- SNAP, Data : Sentinel-1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Other - 1 Megashiksha Cdac  2 IIRS Edusat 3 It MASTER 3 Eduonix</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Digital image processing with open cv in python</td>
+      <td>NaN</td>
+      <td>g/u University</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>CLOUD COMPUTING</td>
+      <td>1 DAY</td>
+      <td>KJSIEIT sion MUMBAI</td>
+      <td>YES</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>https://www.learnvern.com/python-tutorial-django/download-and-install-django</td>
+      <td>NaN</td>
+      <td>LEARN VERN NSDC</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>https://www.learnvern.com/core-python-programming-tutorial/introduction-to-python</td>
+      <td>NaN</td>
+      <td>LEARN VERN NSDC</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>IT-Master</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>Esri mooc</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>https://www.mathworks.com/videos/integrating-python-with-matlab-1605793241650.html?s_tid=vid_pers_recs</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>https://www.learnvern.com/matlab-programming-for-beginners/matlab-interview-questions</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>Role of AI in Biomedical and health informatics</td>
+      <td>NaN</td>
+      <td>NIT SILCHAR</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>“Introduction to Python Programming\nand its Applications”</td>
+      <td>FDP 5 days</td>
+      <td>EICT IIT Guwahati</td>
+      <td>yes</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>SR. No</td>
+      <td>Udemy Course</td>
+      <td>Duration</td>
+      <td>Certificates</td>
+      <td>link</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>complete-Web GIS Development-course</td>
+      <td>14 hr by krishna lodha</td>
+      <td>NaN</td>
+      <td>https://www.udemy.com/course/complete-web-gis-development-course/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>the-complete-web-development-bootcamp</td>
+      <td>50 hr by Dr. Angela Yu</td>
+      <td>NaN</td>
+      <td>https://www.udemy.com/course/the-complete-web-development-bootcamp/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>\n100 Days of Code - The Complete Python Pro Bootcamp for 2021</td>
+      <td>63.5 hr  Dr. Angela Yu</td>
+      <td>NaN</td>
+      <td>https://www.udemy.com/course/100-days-of-code /</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>"Machine Learning for GIS: Land Use/Land Cover Image Analysis"\n</td>
+      <td>4 hr</td>
+      <td>yes</td>
+      <td>https://www.udemy.com/certificate/UC-004f163f-3c9c-4e10-bd54-9c10b9477273/?utm_campaign=email&amp;utm_source=sendgrid.com&amp;utm_medium=email</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>core GIS : LULC &amp;  change detection in GIS</td>
+      <td>4.5 hr</td>
+      <td>yes</td>
+      <td>https://www.udemy.com/course/core-gis-land-use-and-land-cover-change-detection-in-qgis/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>ArcPy for Python Developers using ArcGIS Pro</td>
+      <td>11.5 hr</td>
+      <td>yes</td>
+      <td>https://www.udemy.com/course/arcpy-for-python-developers/learn/lecture/11472548?src=sac&amp;kw=ARCPY#overview</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>start-3d-gis-web-development</td>
+      <td>43 min</td>
+      <td>yes</td>
+      <td>https://www.udemy.com/course/start-3d-gis-web-development/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>How to write and publish a research paper</td>
+      <td>9.5 hr</td>
+      <td>yes</td>
+      <td>https://www.udemy.com/course/draft/2996450/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>machine learning A-Z : hands on python and R  I n Data Science</td>
+      <td>41.5 hr</td>
+      <td>NaN</td>
+      <td>https://www.udemy.com/course/machinelearning/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>top python and D jango web devlopment bundle</td>
+      <td>11.12 hr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Try D JANGO 2.2-WEB devlopment with python 3.6</td>
+      <td>4.5 hr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>my -sql developer -querying for data</td>
+      <td>4.5 hr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>google bigquery and postgresql</td>
+      <td>10 hr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>my sql database management system using mysql for all</td>
+      <td>6 hr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>react fun and track with node express</td>
+      <td>6 hr</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>SR. No</td>
+      <td>Udemy Course /Cognizant (Latest 2024)</td>
+      <td>Duration</td>
+      <td>Certificates</td>
+      <td>link</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Mastering Utility Network Management with ArcGIS Pro</td>
+      <td>2.5 hr</td>
+      <td>Have to complete</td>
+      <td>my udemy</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Advanced Python: Python packaging. Pip install your scripts!</td>
+      <td>1.5</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-181a6c1a-d023-48b0-b321-44a2c68634f6/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Web Mapping and Web-GIS from Dev to Deployment: GeoDjango</td>
+      <td>6.5</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-f7a95a29-ca64-4700-b97f-a67e10d59925/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Google Earth Engine for Machine Learning &amp; Change Detection</td>
+      <td>6.5</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-5c292258-e389-477b-890c-e38e523c2ca2/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Intermediate to advanced python 10- OOP project</td>
+      <td>NaN</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/share/10aUX63@9u8SusTxaO3p-1gNW5j4OCqSNiqEQ8KAO9APNx9AvaasCyjIR7Lfcnx4NBWt_QcLxg==/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Python 3: Deep Dive (Part 2 - Iterators, Generators)</td>
+      <td>36</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-257bc598-f392-449a-9bcd-9adfc6207d1e/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>DevOps: CICD with Git GitLab Jenkins, Docker and Django</td>
+      <td>8</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-de64dae1-501d-443f-9eeb-f23950bf2e03/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Web Scraping in Python Selenium, Scrapy + ChatGPT Prize 2024</td>
+      <td>10 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-7ba43eba-e0f9-43b2-bc7b-86bec2736258/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Python packaging course</td>
+      <td>1.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/course/python-packaging/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Openlayers 6 From Scratch With A Project</td>
+      <td>12 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-b0f7325e-8fc3-498a-95a9-13fca3634952/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Creating Online Dashboards &amp; Story Maps using arcGIS Online</td>
+      <td>2.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-d14ebb80-a30c-4a90-bf8f-c4885ca94a11/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Advanced Google Earth Engine(GEE) For Spatial Data Analysis</td>
+      <td>6.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-cd0a4186-16ff-4c0b-9955-ebb6fc220cdc/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Digital banking and information technology(IT)  in banks</td>
+      <td>10 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-d62724ae-b25b-4257-979f-9459c7045d10/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Recurring Digital Payment, PayPal, ACH(NACHA/Direct Debit)</td>
+      <td>2.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-0c9cfdc0-d649-4728-97c1-a6535850fde3/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Power BI Masterclass from Scratch in 90 minutes [2024]</td>
+      <td>3.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-23bb3f74-967e-4788-89ea-8846b3d2e561/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Step by Step Rest API Testing using Python + Pytest +Allure</td>
+      <td>28.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-904ed370-86cb-4456-935c-2b5e677e49d2/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Docker and Kubernetes: The Complete Guide</td>
+      <td>21.5  Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-b8b52ef2-0dde-4f76-a9c0-13f515b0746d/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Azure Databricks &amp; Spark For Data Engineers (PySpark / SQL)</td>
+      <td>20   Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-a62fb3cc-387e-4413-b7b3-908278ad3ca2/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Ultimate AWS Certified Developer Associate 2024 NEW DVA-C02</td>
+      <td>33.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-3b52a380-8b69-41f0-b772-43086981dfcd/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Mastering Django 5.0 &amp; DRF - The Complete Reference Guide</td>
+      <td>29.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-99c417c2-e145-44e6-8ff6-10c1ff68fd9d/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Web Mapping and Web-GIS from Dev to Deployment: GeoDjango</td>
+      <td>6.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-f7a95a29-ca64-4700-b97f-a67e10d59925/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Amazon Bedrock - Learn AI on AWS with Python!</td>
+      <td>3.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-c301eed9-4768-45fa-9980-dcbeec40db95/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>LLMs Mastery: Complete Guide to Transformers &amp; Generative AI</td>
+      <td>3.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-583eab6c-3898-45ae-82b9-2caaa3c8db27/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>Code Faster with AI: ChatGPT, GitHub Copilot, Tabnine &amp; More</td>
+      <td>2.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-888240d4-c967-42df-974b-286913e6e2ff/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>The Complete Prompt Engineering for AI Bootcamp (2024)</td>
+      <td>15 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-debc2b6f-6750-46b2-b244-d7f475965bc8/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>Mastering GitHub Copilot for JavaScript and React Developers</td>
+      <td>2.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-cebc57e5-9056-4440-8d01-45ade2997346/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>Docker for Python Django Developers</td>
+      <td>4.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-cebc57e5-9056-4440-8d01-45ade2997346/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>ChatGPT for Programmers: Build Python Apps in Seconds</td>
+      <td>2Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-89634225-3ca8-4023-afb3-5628646dc5a3/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>Mastering GitHub Copilot for Python &amp; Django REST Developers</td>
+      <td>2 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-0a49c683-1568-42e6-babf-adae7fef3d39/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>OpenAI with Python: GPT 3/4, Dall-E, Whisper and TTS [2024]</td>
+      <td>3 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-d1d0602e-4472-47ee-934b-98f9eaff5f75/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>Software Architecture &amp; Design of Modern Large Scale Systems</td>
+      <td>7 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-f9d16361-cdb9-4602-b2ca-5f24793a60be/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Fundamentals of Remote Sensing and Geospatial Analysis</td>
+      <td>2 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-99d615f2-46ea-44b7-8179-4651af09a6f7/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>ArcPy for Python Developers using ArcGIS Pro</td>
+      <td>11.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-dafb5631-61a8-442e-a910-46aebb9ca2fe/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>GitHub Copilot: Use AI to write code for you! (Copilot 2024)</td>
+      <td>1.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-03bb9136-80bd-45d7-95ab-a62a12c59058/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>Automate Everything with Python</td>
+      <td>20.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-6b0f91ec-110a-4d94-a2ac-b051dcb0c26b/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>Introduction to OpenAI API &amp; ChatGPT API for Developers</td>
+      <td>3 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-f5dd6274-db29-4134-90f7-a1b0d7b5b64b/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>Executive Briefing: Artificial Intelligence (AI) + ChatGPT</td>
+      <td>2 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-ffbaf988-2bec-46cf-83b5-8a079d979352/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>Build An API With The Django Rest Framework Using Python</td>
+      <td>1.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-e6955579-05cc-4c84-b424-72d65ba59baa/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>Learn Deep Learning in ArcGIS to advance GIS skills</td>
+      <td>2 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-26d0ad4a-13a7-414c-b8ba-524afc576ce9/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>FastAPI - The Complete Course 2024 (Beginner + Advanced)</td>
+      <td>21 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-c00a4d44-8e65-4d4a-96a2-d2251cd16c6b/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>Python Database Mastery: Dive into SQLAlchemy &amp; Alembic</td>
+      <td>4 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-a540cd20-d5e1-484e-a84e-7ec30b5eec06/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>API and Web Service Introduction</td>
+      <td>7 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-35877cd7-edcf-41f3-989a-026a39c6916c/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>OpenAi chatGpt Api for Developer certificate</td>
+      <td>3 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-f5dd6274-db29-4134-90f7-a1b0d7b5b64b/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>Build a Backend REST API with Python &amp; Django - Advanced</td>
+      <td>15 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-6fb1afba-df89-4bcc-8cf9-1416d2e6e269/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>GitHub Copilot: Use AI to write code for you! (Copilot 2024)</td>
+      <td>1.5 Hr</td>
+      <td>YeS</td>
+      <td>https://cognizant.udemy.com/certificate/UC-03bb9136-80bd-45d7-95ab-a62a12c59058/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </body>
+    </html>
+    
